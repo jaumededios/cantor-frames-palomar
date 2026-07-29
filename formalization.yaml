@@ -1,0 +1,125 @@
+# Palomar metadata for the formalization of the main theorem in
+# arXiv:2607.08656v1.
+
+version: "v0.3"
+
+project:
+  name: "Cantor measures with odd base do not admit Fourier frames"
+  authors:
+    - "Jaume de Dios Pont"
+    - "Lukas Liehr"
+    - "Mitchell A. Taylor"
+  # TODO(palomar-human): choose a repository license and add a LICENSE file.
+  license: "TODO: choose a repository license before submission"
+
+sources:
+  - title: "Cantor measures with odd base do not admit Fourier frames"
+    authors:
+      - "Jaume de Dios Pont"
+      - "Lukas Liehr"
+      - "Mitchell A. Taylor"
+    id: "arXiv:2607.08656v1"
+    type: "preprint"
+    license: "CC BY 4.0"
+    author_contacted: "n/a (the source authors are the formalization authors)"
+    prior_work: ""
+
+status:
+  scope: >-
+    The compared result is Theorem 1.1 of arXiv:2607.08656v1: for odd
+    integers b > 1, the fair {0, 2} base-b Cantor measure admits no Fourier
+    frame. The project does not compare every intermediate result in the
+    paper or the even-base half of the broader classification. The sorry count
+    refers to the proof-backed Solution and its pinned dependency; the single
+    sorry in Challenge.lean is Comparator's intentional statement placeholder.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  challenge_placeholder_sorries: 1
+  axioms:
+    - "propext"
+    - "Quot.sound"
+    - "Classical.choice"
+  main_results:
+    - declaration: "NoFourierFrameExists"
+      file: "Solution.lean"
+      sorry_count: 0
+      axioms:
+        - "propext"
+        - "Quot.sound"
+        - "Classical.choice"
+      comparator_config: "comparator.json"
+      literature_dependencies: []
+
+automation:
+  methods:
+    - method: "agent"
+      models:
+        - "GPT-5.5"
+      framework: "ChatGPT web interface and Codex"
+      tool_setup: >-
+        GPT-5.5 in ChatGPT was used for mathematical exploration, and
+        GPT-5.5 in Codex helped produce the Lean formalization.
+      prompting_notes: >-
+        The source paper reports that the authors checked and rewrote every
+        part influenced by language-model output, including the Lean statement
+        and all definitions on which it depends.
+    - method: "agent"
+      models:
+        - "GPT-5"
+      framework: "Codex"
+      tool_setup: >-
+        Prepared this standalone Palomar Comparator workspace and submission
+        metadata. No proof declarations in the pinned source repository were
+        changed.
+      prompting_notes: >-
+        Work was guided by PalomarPolicy and the accepted standalone layout of
+        kim-em/erdos-unit-distance-comparator.
+  notes: >-
+    Large-language-model involvement in the mathematics and Lean development
+    is described in Section 1.5 and Appendix 5 of arXiv:2607.08656v1.
+
+fidelity:
+  divergences: >-
+    No mathematical divergence is intended. The compared declaration is the
+    natural-number-indexed formulation displayed in Appendix 5 of the source
+    paper. It formalizes the headline nonexistence theorem, not the paper's
+    complete surrounding classification or every intermediate lemma.
+
+review:
+  status: "author-verified"
+  reviewers:
+    - "Jaume de Dios Pont"
+    - "Lukas Liehr"
+    - "Mitchell A. Taylor"
+  notes: >-
+    The source paper states that the authors checked and rewrote every part
+    influenced by language-model output and reviewed the Lean statement and
+    all definitions on which it depends.
+    TODO(palomar-human): confirm that this metadata accurately records the
+    authorship, automation, fidelity, and review history before submission.
+
+alignment:
+  namespace: ""
+  statements:
+    - source: "Theorem 1.1 and Appendix 5, arXiv:2607.08656v1"
+      lean: "NoFourierFrameExists"
+      module: "Challenge"
+      status: "proved"
+      note: >-
+        For b > 1 odd, every natural-number-indexed family of L²(cantor_μ b)
+        functions that is almost everywhere an exponential fails the frame
+        inequalities.
+
+acknowledgements: >-
+  The formalization relies on Lean 4 and Mathlib. The mathematical and
+  formalization provenance is described in arXiv:2607.08656v1.
+
+palomar:
+  plain_language_claim: >-
+    If b > 1 is odd, no countable family of complex exponentials is a frame
+    for the L² space of the fair {0, 2} base-b Cantor measure.
+  known_fidelity_gaps: "None known."
+  extra_assumptions: "None beyond b > 1 and Odd b."
+  novelty: >-
+    This metadata makes no independent novelty claim. Mathematical provenance
+    and prior literature are supplied by arXiv:2607.08656v1.
