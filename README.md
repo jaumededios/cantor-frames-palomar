@@ -87,10 +87,6 @@ The precise citations and the relationship of each to the formalized result
 are recorded in [`formalization.yaml`](formalization.yaml). See the paper for
 the authors' full literature discussion and bibliography.
 
-That metadata also identifies the `VibeProving/Strichartz-Problem`
-development-history repository: its pinned tree is byte-for-byte the same
-artifact as the proof dependency, not an unacknowledged second formalization.
-
 ## Build and verify
 
 The project uses the Palomar-supported Lean toolchain in `lean-toolchain`.

@@ -13,8 +13,9 @@ project:
     name: "Jaume de Dios Pont"
     github: "jaumededios"
     role: >-
-      Maintainer of the source formalization and this Comparator wrapper;
-      responsible for approving the metadata before any Palomar submission.
+      Paper co-author and maintainer of the source formalization and this
+      Comparator wrapper; responsible for approving the metadata before any
+      Palomar submission.
   metadata_authorship: >-
     This formalization.yaml was written in part by Codex with extensive human
     feedback. Jaume de Dios Pont supplied substantive corrections and
@@ -57,16 +58,16 @@ literature:
     known bounds on mutually orthogonal exponentials ruled out an exponential
     basis but did not rule out the weaker possibility of a Fourier frame.
     Strichartz consequently asked whether the middle-third Cantor measure is
-    frame-spectral. That distinction matters: Lai and Wang exhibited
-    non-spectral fractal measures which nevertheless admit Fourier frames, and
-    Picioroaga and Weber constructed exponential Parseval frames for the
-    Cantor-4 measure. Dutkay, Emami, and Lai also showed that the middle-third
-    measure admits very large exponential Riesz sequences, a positive result
-    short of a frame. The nonexistence theorems surveyed in the source paper
-    did not cover odd-base Cantor measures. Theorem 1.1 closes this gap for
+    frame-spectral. In contrast to the obstruction to an exponential basis,
+    non-spectrality alone does not preclude a Fourier frame: Lai and Wang
+    exhibited non-spectral fractal measures which nevertheless admit Fourier
+    frames, and Picioroaga and Weber constructed exponential Parseval frames
+    for the Cantor-4 measure. Dutkay, Emami, and Lai also showed that the
+    middle-third measure admits very large exponential Riesz sequences, a
+    positive result short of a frame. Theorem 1.1 settles the question for
     every odd b > 1; combined with the even-base construction, it gives the
-    parity classification that the measure admits a Fourier frame exactly
-    when b is even.
+    parity classification that the measure admits a Fourier frame exactly when
+    b is even.
   directly_related:
     - citation: >-
         R. S. Strichartz, "Mock Fourier series and transforms associated with
@@ -107,14 +108,8 @@ literature:
         the Fourier frame excluded by Theorem 1.1.
   related_formalizations: >-
     The Lean development linked by the primary source is the proof dependency
-    pinned above. VibeProving/Strichartz-Problem at commit
-    9c14b87d58212ae00f0fe549277211df648c0f31 is the development-history
-    repository for the same artifact: that commit and the pinned
-    jaumededios/Cantor_Measure_Frames commit have the identical Git tree
-    0e674c52d530f5f099cd3a24ecc3ea0dc1355812. It is therefore not a separate
-    or competing Lean formalization. This repository is only a Palomar
-    Comparator wrapper around that shared development, not a second
-    formalization or an independent proof.
+    pinned above. This repository is only a Palomar Comparator wrapper around
+    that development, not a second formalization or an independent proof.
 
 status:
   scope: >-
