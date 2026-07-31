@@ -1,0 +1,304 @@
+# Palomar metadata for the formalization of the main theorem in
+# arXiv:2607.08656v1.
+
+version: "v0.3"
+
+project:
+  name: "Cantor measures with odd base do not admit Fourier frames"
+  authors:
+    - "Jaume de Dios Pont"
+    - "Lukas Liehr"
+    - "Mitchell A. Taylor"
+  responsible_maintainer:
+    name: "Jaume de Dios Pont"
+    github: "jaumededios"
+    role: >-
+      Paper co-author and maintainer of the source formalization and this
+      Comparator wrapper.
+  metadata_authorship: >-
+    This formalization.yaml was written in part by Codex with extensive human
+    feedback. Jaume de Dios Pont supplied substantive corrections and
+    clarifications and confirmed the resulting account of authorship,
+    automation, fidelity, and review history.
+  license: "Apache-2.0"
+
+sources:
+  - title: "Cantor measures with odd base do not admit Fourier frames"
+    authors:
+      - "Jaume de Dios Pont"
+      - "Lukas Liehr"
+      - "Mitchell A. Taylor"
+    id: "arXiv:2607.08656v1"
+    type: "preprint"
+    license: "CC BY 4.0"
+    author_contacted: "n/a (the source authors are the formalization authors)"
+    relationship: >-
+      Primary source. Challenge.lean formalizes Theorem 1.1 using the public
+      statement and definitions explained in Appendix 5.
+    formalization_url: >-
+      https://github.com/jaumededios/Cantor_Measure_Frames/tree/f9b80c7e9640bcd320707b84cffe86d672ed0409
+    prior_work: >-
+      The pinned source formalization above; this repository adapts it only to
+      Palomar's standalone Comparator layout.
+
+literature:
+  summary_provenance:
+    generated_by: "Codex (OpenAI)"
+    status: "automated summary of the source paper"
+    basis: >-
+      Sections 1.2--1.4 and the bibliography of arXiv:2607.08656v1.
+  context: >-
+    Jorgensen and Pedersen proved that the fair {0,2} Cantor measures with even
+    base are spectral. For odd bases, known bounds on mutually orthogonal
+    exponentials ruled out an exponential basis but did not rule out the
+    weaker possibility of a Fourier frame.
+    Strichartz consequently asked whether the middle-third Cantor measure is
+    frame-spectral. In contrast to the obstruction to an exponential basis,
+    non-spectrality alone does not preclude a Fourier frame: Lai and Wang
+    exhibited non-spectral fractal measures which nevertheless admit Fourier
+    frames, and Picioroaga and Weber constructed exponential Parseval frames
+    for the Cantor-4 measure. Dutkay, Emami, and Lai also showed that the
+    middle-third measure admits very large exponential Riesz sequences, a
+    positive result short of a frame. Theorem 1.1 settles the question for
+    every odd b > 1; combined with the even-base construction, it gives the
+    parity classification that the measure admits a Fourier frame exactly when
+    b is even.
+  directly_related:
+    - citation: >-
+        R. S. Strichartz, "Mock Fourier series and transforms associated with
+        certain Cantor measures", J. Anal. Math. 81 (2000), 209--238.
+      doi: "10.1007/BF02788990"
+      relationship: >-
+        Poses the middle-third Cantor-measure Fourier-frame question answered
+        by Theorem 1.1 of the primary source.
+    - citation: >-
+        P. E. T. Jorgensen and S. Pedersen, "Dense analytic subspaces in
+        fractal L²-spaces", J. Anal. Math. 75 (1998), 185--228.
+      doi: "10.1007/BF02788699"
+      relationship: >-
+        Establishes the complementary even-base spectral construction used
+        with Theorem 1.1 to obtain the parity classification.
+    - citation: >-
+        C. Lai and Y. Wang, "Non-spectral fractal measures with Fourier
+        frames", J. Fractal Geom. 4 (3) (2017), 305--327.
+      doi: "10.4171/JFG/52"
+      relationship: >-
+        Shows why non-spectrality alone does not rule out Fourier frames and
+        therefore does not already imply the odd-base theorem.
+    - citation: >-
+        G. Picioroaga and E. S. Weber, "Fourier frames for the Cantor-4 set",
+        J. Fourier Anal. Appl. 23 (2) (2017), 324--343.
+      doi: "10.1007/s00041-016-9471-0"
+      relationship: >-
+        Gives a related positive construction of exponential Parseval frames
+        for the even-base Cantor-4 measure.
+    - citation: >-
+        D. E. Dutkay, S. Emami, and C. Lai, "Existence and exactness of
+        exponential Riesz sequences and frames for fractal measures",
+        J. Anal. Math. 143 (1) (2021), 289--311.
+      doi: "10.1007/s11854-021-0156-5"
+      relationship: >-
+        Proves that the middle-third Cantor measure has an exponential Riesz
+        sequence of maximal possible Beurling dimension, while not supplying
+        the Fourier frame excluded by Theorem 1.1.
+  related_formalizations: >-
+    The Lean development linked by the primary source is the proof dependency
+    pinned above. This repository is only a Palomar Comparator wrapper around
+    that development, not a second formalization or an independent proof.
+
+status:
+  scope: >-
+    The compared result is Theorem 1.1 of arXiv:2607.08656v1: for odd
+    integers b > 1, the fair {0, 2} base-b Cantor measure admits no Fourier
+    frame. The project does not compare every intermediate result in the
+    paper or the even-base half of the broader classification. The sorry count
+    refers to the proof-backed Solution and its pinned dependency; the single
+    sorry in Challenge.lean is Comparator's intentional statement placeholder.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  challenge_placeholder_sorries: 1
+  axioms:
+    - "propext"
+    - "Quot.sound"
+    - "Classical.choice"
+  main_results:
+    - declaration: "CantorFramesPalomar.NoFourierFrameExists"
+      file: "Solution.lean"
+      sorry_count: 0
+      axioms:
+        - "propext"
+        - "Quot.sound"
+        - "Classical.choice"
+      comparator_config: "comparator.json"
+      literature_dependencies: []
+
+automation:
+  methods:
+    - method: "agent"
+      models:
+        - "GPT-5.5"
+      framework: "ChatGPT web interface and Codex"
+      tool_setup: >-
+        GPT-5.5 in ChatGPT was used for mathematical exploration, and
+        GPT-5.5 in Codex helped produce the Lean formalization.
+      mathematical_role: >-
+        The project initially pursued a positive construction: frequency sets
+        intended to give scale-uniform frames for the orthogonal differences
+        W_n of the level-n Cantor spaces. With GPT-5.5, the authors analyzed
+        why these candidates fail. Increasingly many frequency differences
+        equal powers of 3, and self-similarity keeps the corresponding Fourier
+        transform values bounded away from zero, violating the required
+        Bessel estimate. This failed construction suggested the obstruction
+        used in the final negative proof. GPT-5.5 also helped simplify the
+        normalized polynomial p_n appearing in that proof to a shorter
+        equivalent expression.
+      lean_role: >-
+        GPT-5.5 in Codex assisted the Lean formalization, and the Lean proof
+        files were generated by large language models. This refers to the
+        internal proof implementation, not the public statement surface. The
+        purpose of that proof code is kernel-checked verification rather than
+        presentation as a human-readable proof.
+      human_review: >-
+        The final paper is human-written. The final public Lean statement and
+        the definitions on which it depends are also human-written: an initial
+        language-model draft of the statement surface was rejected, and the
+        authors rewrote it into the published version. This human authorship
+        of the paper and statement surface should not be read as a claim of
+        line-by-line human authorship or review of the generated proof files.
+      prompting_notes: >-
+        The original TeX source of the paper was provided to the model and
+        used to produce a detailed LLM-generated formalization blueprint. That
+        blueprint then guided the Lean development. The workflow also used the
+        Lean 4 skill and Cameron Freer's MCP tooling for Lean-specific
+        assistance and feedback.
+        For the full first-person account of the exploratory path and review
+        process, see the paper, Section 1.5 and Appendix 5.
+    - method: "agent"
+      models:
+        - "GPT-5"
+      framework: "Codex"
+      tool_setup: >-
+        Prepared this standalone Palomar Comparator workspace and submission
+        metadata. Codex drafted parts of formalization.yaml with extensive
+        human feedback and correction. No proof declarations in the pinned
+        source repository were changed.
+      prompting_notes: >-
+        Work was guided by PalomarPolicy and the accepted standalone layout of
+        kim-em/erdos-unit-distance-comparator.
+
+fidelity:
+  divergences: >-
+    No known mathematical divergence. Challenge.lean uses the appendix's
+    `Fin 2` digit space and compares the headline odd-base nonexistence theorem.
+    It does not compare every intermediate result or the prior even-base
+    theorem. This scope choice is detailed below.
+  source_anchor: >-
+    Theorem 1.1 and the complete Lean-facing restatement in Appendix 5,
+    especially the displayed declaration NoFourierFrameExists and Sections
+    5.1--5.2.
+  statement_alignment: >-
+    The compared declaration is the natural-number-indexed formulation
+    deliberately displayed in Appendix 5 for readability. A sequence indexed
+    by ℕ is the paper's public representation of a countable exponential
+    family; the theorem does not claim extra generality from changing the
+    frequency index type.
+  definition_map:
+    - lean: "Ω, uniformBoolSeq"
+      source: "Appendix 5.1: the fair product space {0,1}^ℕ"
+      note: >-
+        As in the appendix, Ω is `ℕ → Fin 2`, and `uniformBoolSeq` is the
+        infinite product of the uniform probability measure on `Fin 2`.
+    - lean: "code, cantor_μ"
+      source: >-
+        Appendix 5.1: the pushforward of the fair product measure by
+        ω ↦ ∑ n, 2 ω_n / b^(n+1)
+      note: >-
+        This is the paper's {0,2} base-b Cantor measure with Lean's zero-based
+        indexing. The theorem hypotheses 1 < b and Odd b give the intended
+        odd bases b ≥ 3.
+    - lean: "e, IsExpSystem"
+      source: >-
+        Appendix 5.2: functions almost everywhere equal to
+        x ↦ exp(2πikx), with real frequencies k
+      note: >-
+        Equality is measure-almost-everywhere, as required for elements of L².
+    - lean: "IsFrame"
+      source: "Appendix 5.2: the usual positive lower and upper frame bounds"
+      note: >-
+        The definition needs only a normed additive group and complex inner
+        product structure. Completeness is unnecessary to state the
+        inequalities, and the theorem's ambient L² space is complete.
+    - lean: "NoFourierFrameExists"
+      source: "Theorem 1.1 and the displayed theorem in Appendix 5"
+      note: >-
+        Lp ℂ 2 (cantor_μ b) is the complex L² space of the stated measure, and
+        the conclusion negates the frame inequalities for every ℕ-indexed
+        exponential system.
+  scope_boundary: >-
+    The comparison covers the paper's headline nonexistence theorem. It does
+    not separately register every intermediate lemma or the even-base result,
+    which is prior work rather than a theorem proved in the source paper.
+
+review:
+  status: "human-authored-statement-and-definitions"
+  reviewers:
+    - "Jaume de Dios Pont"
+    - "Lukas Liehr"
+    - "Mitchell A. Taylor"
+  notes: >-
+    The final paper, public Lean statement, and statement-facing definitions
+    are human-written. The generated internal Lean proof is not claimed to
+    have been written or reviewed line by line by humans. Details follow.
+  reviewed_scope: >-
+    The authors wrote the final paper and the public Lean statement surface,
+    including the definitions on which the theorem depends. An initial
+    language-model draft of that Lean surface was rejected and rewritten by
+    the authors. See the paper, Section 1.5 and Appendix 5.
+  proof_review_scope: >-
+    The proof files in the pinned source development were generated with
+    language-model assistance. They are not represented here as a
+    line-by-line human-authored or line-by-line human-reviewed proof. Palomar's
+    mechanical check independently compiles the proof, checks the exported
+    challenge/solution match, and restricts the admitted axioms.
+  wrapper_review: >-
+    This wrapper and its metadata were prepared with Codex. Jaume de Dios Pont,
+    the responsible maintainer named above, confirmed that the metadata
+    accurately records the authorship, automation, fidelity, and review history
+    on 2026-07-29.
+
+alignment:
+  namespace: "CantorFramesPalomar"
+  statements:
+    - source: "Theorem 1.1 and Appendix 5, arXiv:2607.08656v1"
+      lean: "CantorFramesPalomar.NoFourierFrameExists"
+      module: "Challenge"
+      status: "proved"
+      note: >-
+        For b > 1 odd, every natural-number-indexed family of L²(cantor_μ b)
+        functions that is almost everywhere an exponential fails the frame
+        inequalities. This is the exact public formulation displayed in
+        Appendix 5, not a claim of additional index-type generality.
+
+acknowledgements: >-
+  The formalization relies on Lean 4 and Mathlib. The mathematical and
+  formalization provenance is described in arXiv:2607.08656v1. As acknowledged
+  in the paper, Lukas Liehr is grateful to the Azrieli Foundation for the
+  award of an Azrieli Fellowship and acknowledges support from ISF Grant
+  No. 854/25.
+
+palomar:
+  plain_language_claim: >-
+    If b > 1 is odd, no countable family of complex exponentials is a frame
+    for the L² space of the fair {0, 2} base-b Cantor measure.
+  known_fidelity_gaps: >-
+    No known mathematical gap. The scope boundary is disclosed under fidelity.
+  extra_assumptions: "None beyond b > 1 and Odd b."
+  novelty: >-
+    Theorem 1.1 settles Strichartz's question by proving that the middle-third
+    Cantor measure does not admit a Fourier frame. More generally, it excludes
+    Fourier frames for every odd-base Cantor measure; together with the
+    Jorgensen--Pedersen construction for even bases, this gives the parity
+    classification that, for integer bases greater than one, the measure admits
+    a Fourier frame exactly when the base is even. The literature context above
+    is an automated Codex summary of Sections 1.2--1.4 of the paper. See the
+    paper for the full mathematical provenance and complete bibliography.

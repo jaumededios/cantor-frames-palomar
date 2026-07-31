@@ -1,0 +1,14 @@
+name = "CantorFramesPalomar"
+version = "0.1.0"
+defaultTargets = ["Challenge", "Solution"]
+
+[[require]]
+name = "CantorMeasureFrames"
+git = "https://github.com/jaumededios/Cantor_Measure_Frames.git"
+rev = "f9b80c7e9640bcd320707b84cffe86d672ed0409"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"
