@@ -33,12 +33,12 @@ does the Lean-facing statement displayed in Appendix 5 of the paper. This is
 the accessible sequence formulation of a countable family, not a restriction
 introduced by this wrapper.
 
-The challenge uses `Bool` for a fair two-point digit space where the appendix
-prints `Fin 2`. The explicit map `false ↦ 0`, `true ↦ 1` canonically identifies
-the resulting product measures. The coding map, pushforward measure, complex
-exponentials, almost-everywhere equality, and two-sided frame inequalities
-otherwise follow Appendix 5 directly. The complete field-by-field account is
-in [`formalization.yaml`](formalization.yaml).
+As in Appendix 5, the challenge uses `Ω := ℕ → Fin 2`, the infinite product of
+the uniform measure on `Fin 2`, and the coding map that coerces each digit
+directly into `ℝ`. The pushforward measure, complex exponentials,
+almost-everywhere equality, and two-sided frame inequalities also follow the
+appendix directly. The complete field-by-field account is in
+[`formalization.yaml`](formalization.yaml).
 
 ## Provenance and review
 

@@ -2,7 +2,7 @@
   "challenge_module": "Challenge",
   "solution_module": "Solution",
   "theorem_names": [
-    "NoFourierFrameExists"
+    "CantorFramesPalomar.NoFourierFrameExists"
   ],
   "permitted_axioms": [
     "propext",

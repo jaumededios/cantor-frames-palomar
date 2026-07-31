@@ -6,6 +6,8 @@ open scoped Real Complex InnerProductSpace BigOperators
 open MeasureTheory
 open ENNReal
 
+namespace CantorFramesPalomar
+
 /-!
 # Challenge: odd-base Cantor measures do not admit Fourier frames
 
@@ -17,19 +19,16 @@ J. de Dios Pont, L. Liehr, and M. A. Taylor,
 
 /-! ### Definition of the Cantor measure `μ_b` for odd `b ≥ 3` -/
 
-/-- Infinite fair-bit sequences. -/
-abbrev Ω : Type := ℕ → Bool
+/-- The set of functions from the natural numbers to `{0, 1}`. -/
+abbrev Ω : Type := ℕ → Fin 2
 
-/-- Interpret a Boolean as the digit `0` or `1`. -/
-def bit (u : Bool) : ℝ := if u then 1 else 0
-
-/-- The uniform product measure on infinite fair-bit sequences. -/
+/-- The uniform product measure on `Ω`. -/
 noncomputable def uniformBoolSeq : Measure Ω :=
-  Measure.infinitePi (fun _ : ℕ ↦ (PMF.uniformOfFintype Bool).toMeasure)
+  Measure.infinitePi (fun _ : ℕ ↦ (PMF.uniformOfFintype (Fin 2)).toMeasure)
 
 /-- The coding map for the `{0, 2}` base-`b` Cantor measure. -/
 noncomputable def code (b : ℝ) (ω : Ω) : ℝ :=
-  ∑' n : ℕ, 2 * bit (ω n) / (b ^ (n + 1))
+  ∑' n : ℕ, 2 * (ω n) / (b ^ (n + 1))
 
 /-- The base-`b` Cantor measure, using digits `{0, 2}`. -/
 noncomputable def cantor_μ (b : ℕ) : Measure ℝ :=
@@ -63,3 +62,5 @@ theorem NoFourierFrameExists
     (F : ℕ → Lp ℂ 2 (cantor_μ b)) (hF : IsExpSystem F) :
     ¬ IsFrame F := by
   sorry
+
+end CantorFramesPalomar
