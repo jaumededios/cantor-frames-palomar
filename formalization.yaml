@@ -22,6 +22,10 @@ project:
     automation, fidelity, and review history.
   license: "Apache-2.0"
 
+classification:
+  arxiv: [math.FA]
+  msc2020: [28A80, 42B05, 46B15]
+
 sources:
   - title: "Cantor measures with odd base do not admit Fourier frames"
     authors:
