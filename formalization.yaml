@@ -1,7 +1,8 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/main/schema/formalization.schema.json
 # Palomar metadata for the formalization of the main theorem in
 # arXiv:2607.08656v1.
 
-version: "v0.3"
+version: "v0.4"
 
 project:
   name: "Cantor measures with odd base do not admit Fourier frames"
@@ -9,18 +10,19 @@ project:
     - "Jaume de Dios Pont"
     - "Lukas Liehr"
     - "Mitchell A. Taylor"
-  responsible_maintainer:
-    name: "Jaume de Dios Pont"
-    github: "jaumededios"
-    role: >-
-      Paper co-author and maintainer of the source formalization and this
-      Comparator wrapper.
+  responsible_maintainers:
+    - "Jaume de Dios Pont"
   metadata_authorship: >-
     This formalization.yaml was written in part by Codex with extensive human
     feedback. Jaume de Dios Pont supplied substantive corrections and
     clarifications and confirmed the resulting account of authorship,
     automation, fidelity, and review history.
   license: "Apache-2.0"
+
+repository:
+  substantive_formalization:
+    id: "https://github.com/jaumededios/Cantor_Measure_Frames"
+    revision: "f9b80c7e9640bcd320707b84cffe86d672ed0409"
 
 classification:
   arxiv: [math.FA]
@@ -33,17 +35,14 @@ sources:
       - "Lukas Liehr"
       - "Mitchell A. Taylor"
     id: "arXiv:2607.08656v1"
-    type: "preprint"
+    type: "paper"
+    location: "Theorem 1.1 and Appendix 5"
     license: "CC BY 4.0"
-    author_contacted: "n/a (the source authors are the formalization authors)"
-    relationship: >-
+    author_endorsement: "participated"
+    relationship: "formalizes"
+    note: >-
       Primary source. Challenge.lean formalizes Theorem 1.1 using the public
       statement and definitions explained in Appendix 5.
-    formalization_url: >-
-      https://github.com/jaumededios/Cantor_Measure_Frames/tree/f9b80c7e9640bcd320707b84cffe86d672ed0409
-    prior_work: >-
-      The pinned source formalization above; this repository adapts it only to
-      Palomar's standalone Comparator layout.
 
 literature:
   summary_provenance:
