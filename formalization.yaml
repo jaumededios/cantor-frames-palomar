@@ -105,6 +105,13 @@ literature:
         Proves that the middle-third Cantor measure has an exponential Riesz
         sequence of maximal possible Beurling dimension, while not supplying
         the Fourier frame excluded by Theorem 1.1.
+    - citation: >-
+        X. Fu, Z. Song, and W. Wang, "A Walsh-Quotient Obstruction for Fourier
+        Frames on Odd Reciprocal-Power Bernoulli Convolutions". arXiv preprint.
+      doi: "arXiv:2607.10547"
+      relationship: >-
+        Independent proof of the same fact, generalizing it to other
+        cantor-like measures. 
   related_formalizations: >-
     The Lean development linked by the primary source is the proof dependency
     pinned above. This repository is only a Palomar Comparator wrapper around
